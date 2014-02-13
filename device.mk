@@ -83,7 +83,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/d2lte/gps/gps.conf:system/etc/gps.conf
 
 # Torch
-PRODUCT_PACKAGES += Torch
+PRODUCT_PACKAGES += OmniTorch
 
 # Wifi
 PRODUCT_PACKAGES += \

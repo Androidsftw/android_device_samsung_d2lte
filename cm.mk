@@ -1,9 +1,9 @@
 $(call inherit-product, device/samsung/d2lte/full_d2lte.mk)
 
-# Enhanced NFC
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
+#Inherit common Omni stuff.
+$(call inherit-product, vendor/omni/config/common.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+#inherit ALL omni APN's.
+$(call inherit-product, vendor/omni/config/gsm.mk)
 
-PRODUCT_NAME := cm_d2lte
+PRODUCT_NAME := omni_d2lte
