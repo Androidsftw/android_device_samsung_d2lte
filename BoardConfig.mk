@@ -45,7 +45,6 @@ BOARD_EGL_CFG := device/samsung/d2lte/configs/egl.cfg
 # Recovery
 PRODUCT_COPY_FILES += \
     device/samsung/d2lte/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/d2lte/recovery/recovery_keys.c
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -88,7 +87,7 @@ TW_CRYPTO_KEY_LOC := "footer"
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_USES_QCOM_BSP := true
-COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP -DUSE_COPYBIT_COMPOSITION_FALLBACK
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
@@ -116,6 +115,8 @@ ifeq ($(filter cm_apexqtmo cm_expressatt,$(TARGET_PRODUCT)),)
   TARGET_NEED_CAMERA_ZSL := true
   TARGET_ADD_ISO_MODE_1600 := true
   TARGET_NEED_SAMSUNG_CAMERA_MODE := true
+else
+  TARGET_NEED_PREVIEW_SIZE_FIXUP := true
 endif
 TARGET_NEED_DISABLE_FACE_DETECTION := true
 
