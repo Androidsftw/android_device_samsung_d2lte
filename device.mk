@@ -61,7 +61,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += OmniTorch
 
 PRODUCT_PACKAGES += \
-    libnetcmdiface \
+    libnetcmdiface
 
 # common msm8960
 $(call inherit-product, device/samsung/msm8960-common/msm8960.mk)
